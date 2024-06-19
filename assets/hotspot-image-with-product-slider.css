@@ -11,7 +11,6 @@
   margin-top: 0;
 }
 .hotspot-image-with-product-slider {
-  margin: 20px auto;
   border: 1px solid rgb(40, 40, 42);
   border-radius: 40px 40px 10px 10px;
 }
@@ -192,6 +191,10 @@
     left: -10px;
     top: -10px;
   }
+  .hotspot-image-with-product-slider {
+    margin: 20px 1rem;
+  }
+
   .badge-onsale {
     display: none;
   }
