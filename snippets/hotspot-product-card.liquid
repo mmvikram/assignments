@@ -1,7 +1,11 @@
 {% assign rating = product.metafields.custom.rating | plus: 0 | round: 0 %}
-<a href='{{product.url}}' class='hotspot-product-card'>
-  <div class='hotspot-product-card--image-wrapper'>
+<a href='{{product.url}}' class='hotspot-product-card x'>
+  <div class='hotspot-product-card--image-wrapper 54,123,246'>
     {% render 'responsive-image', desktopImage: product.featured_image %}
+
+    {% if product.tags contains 'onsale' %}
+      <div class='badge-onsale'>On Sale</div>
+    {% endif %}
   </div>
   <div class='hotspot-product-card--content flex flex-col items-center gap-3'>
     <div class='title'>{{ product.title }}</div>
