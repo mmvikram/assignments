@@ -7,5 +7,12 @@ hotspots.forEach((hotspot) => {
     let i = e.target.dataset.index;
 
     splide.splide.go(parseInt(i));
+
+    hotspots.forEach((hotspot) => {
+      if (hotspot.classList.contains('is-active')) {
+        hotspot.classList.remove('is-active');
+      }
+    });
+    e.target.classList.add('is-active');
   });
 });

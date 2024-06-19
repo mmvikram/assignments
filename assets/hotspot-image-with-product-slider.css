@@ -103,6 +103,15 @@
   border-color: rgb(54, 123, 246);
 }
 
+[data-index].is-active {
+  transform: scale(1.25);
+  height: 15px;
+  width: 15px;
+}
+
+[data-index].is-active.hotspot::after {
+  background: rgba(255, 255, 255, 0.5);
+}
 /* HOTSPOT */
 
 .hotspot-image-with-product-slider .hotspot {
@@ -115,6 +124,7 @@
   position: absolute;
   cursor: pointer;
   z-index: 10;
+  transition: all 0.5s ease;
 }
 .hotspot-image-with-product-slider .hotspot::after {
   --hotspot-size: 40px;
