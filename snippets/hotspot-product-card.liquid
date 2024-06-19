@@ -1,12 +1,11 @@
+{% assign rating = product.metafields.custom.rating | plus: 0 | round: 0 %}
 <a href='{{product.url}}' class='hotspot-product-card'>
   <div class='hotspot-product-card--image-wrapper'>
     {% render 'responsive-image', desktopImage: product.featured_image %}
   </div>
   <div class='hotspot-product-card--content flex flex-col items-center gap-3'>
     <div class='title'>{{ product.title }}</div>
-    {% if product.metafields.custom.rating != blank %}
-      <div class='rating'>{{ product.metafields.custom.rating }}</div>
-    {% endif %}
+    {% render 'star-rating', rating: rating %}
 
     {% if product.compare_at_price == blank %}
       <div class='flex gap-3 price-container'>
