@@ -1,5 +1,5 @@
 <style>
-  {% assign gap_sizes = "0,1,2,3,4,5,6,8,10" | split: "," %}
+  {% assign gap_sizes = "0,1,2,3,4,5,6,8,10,12,14,16,20,24,28,32,36" | split: "," %}
 
   {% for size in gap_sizes %}
     .gap-{{ size }} {
@@ -28,6 +28,30 @@
 
     .my-{{ size }} {
       margin-block: {{ size | times: 0.25 }}rem;
+    }
+
+    .pr-{{ size }} {
+      padding-right: {{ size | times: 0.25 }}rem;
+    }
+
+    .pl-{{ size }} {
+      padding-left: {{ size | times: 0.25 }}rem;
+    }
+
+    .pt{{ size }} {
+      padding-top: {{ size | times: 0.25 }}rem;
+    }
+
+    .pb-{{ size }} {
+      padding-bottom: {{ size | times: 0.25 }}rem;
+    }
+
+    .px-{{ size }} {
+      padding-inline: {{ size | times: 0.25 }}rem;
+    }
+
+    .py-{{ size }} {
+      padding-block: {{ size | times: 0.25 }}rem;
     }
 
   {% endfor %}

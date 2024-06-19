@@ -32,7 +32,12 @@
 .mr-auto {
   margin-right: auto;
 }
-
+.mx-auto {
+  margin-inline: auto;
+}
+.my-auto {
+  margin-block: auto;
+}
 .hidden {
   display: none;
 }

@@ -13,11 +13,11 @@
         "button": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "Week 3",
-            "button_link_1": "shopify:\/\/pages\/week3-l2-assignment",
+            "button_label_1": "Week 4",
+            "button_link_1": "shopify:\/\/pages\/week4-l2-assignment",
             "button_style_secondary_1": true,
-            "button_label_2": "Week 4",
-            "button_link_2": "shopify:\/\/pages\/week4-l2-assignment",
+            "button_label_2": "Week 5",
+            "button_link_2": "shopify:\/\/pages\/week-5-l2-assignment",
             "button_style_secondary_2": false,
             "button_style_red": false
           }

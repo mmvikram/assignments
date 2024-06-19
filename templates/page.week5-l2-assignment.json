@@ -2,13 +2,61 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "hotspot_image_with_product_slider_hHMR3p": {
+      "type": "hotspot-image-with-product-slider",
+      "blocks": {
+        "hotspot_aaP9wr": {
+          "type": "hotspot",
+          "settings": {
+            "horizontal_position": 40,
+            "Vertical_position": 35,
+            "hotspot_product": "water-resistant-snow-hoodie"
+          }
+        },
+        "hotspot_XD8DyV": {
+          "type": "hotspot",
+          "settings": {
+            "horizontal_position": 38,
+            "Vertical_position": 19,
+            "hotspot_product": "high-performance-snow-goggles"
+          }
+        },
+        "hotspot_LmXXFj": {
+          "type": "hotspot",
+          "settings": {
+            "horizontal_position": 70,
+            "Vertical_position": 67,
+            "hotspot_product": "beginners-guide-to-snowboarding-dvd"
+          }
+        }
+      },
+      "block_order": [
+        "hotspot_aaP9wr",
+        "hotspot_XD8DyV",
+        "hotspot_LmXXFj"
+      ],
+      "settings": {
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "heading": "Shop the look",
+        "image": "shopify:\/\/shop_images\/main-image.webp",
+        "slide_type": "slide",
+        "slide_per_page": 1,
+        "pagination": false,
+        "arrows": true,
+        "autoplay": true,
+        "autoplay_interval": 5
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "hotspot_image_with_product_slider_hHMR3p"
   ]
 }

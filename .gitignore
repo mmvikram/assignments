@@ -1,1 +1,3 @@
 .shopifyignore
+
+node_modules
