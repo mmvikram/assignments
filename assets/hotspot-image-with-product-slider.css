@@ -1,10 +1,17 @@
+.max-width-1500 {
+  max-width: 150rem;
+}
+
+.mx-auto {
+  margin-inline: auto;
+}
 .hotspot-image-with-product-slider h2 {
   font-weight: 700;
   font-size: 30px;
   margin-top: 0;
 }
 .hotspot-image-with-product-slider {
-  margin: 20px;
+  margin: 20px auto;
   border: 1px solid rgb(40, 40, 42);
   border-radius: 40px 40px 10px 10px;
 }
