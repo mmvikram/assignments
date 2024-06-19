@@ -43,6 +43,19 @@
     padding-bottom: {{ padding_bottom | times: 0.5| round:0 }}px;
   }
   }
+
+  {% for hotspot in hotspots %}
+    .hotspot-image-with-product-image-wrapper .hotspot:nth-of-type({{forloop.index}}){
+      top:{{hotspot.settings.Vertical_position}}%;
+      left:{{hotspot.settings.horizontal_position}}%
+    }
+  @media screen and (max-width:749px){
+    .hotspot-image-with-product-image-wrapper .hotspot:nth-of-type({{forloop.index}}){
+      top:{{hotspot.settings.mobile_Vertical_position}}%;
+      left:{{hotspot.settings.mobile_horizontal_position}}%
+    }
+  }
+  {% endfor %}
 </style>
 
 <div class='{{wrapper}} mx-8 hotspot-image-with-product-slider-outer-wrapper'>
@@ -52,8 +65,7 @@
       {% for hotspot in hotspots %}
         <button
           data-index='{{forloop.index0}}'
-          class='hotspot'
-          style='top:{{hotspot.settings.Vertical_position}}%; left:{{hotspot.settings.horizontal_position}}%'></button>
+          class='hotspot'></button>
       {% endfor %}
       {% render 'responsive-image', desktopImage: image, pictureClass: 'picture-class' %}
     </div>
@@ -183,8 +195,12 @@
   "blocks": [
     {
       "type": "hotspot",
-      "name": " Hostpot",
+      "name": " Hotspot",
       "settings": [
+        {
+          "type": "header",
+          "content": "Desktop"
+        },
         {
           "type": "range",
           "id": "horizontal_position",
@@ -198,6 +214,30 @@
         {
           "type": "range",
           "id": "Vertical_position",
+          "label": "Vertical position",
+          "min": 10,
+          "max": 100,
+          "step": 1,
+          "unit": "%",
+          "default": 10
+        },
+        {
+          "type": "header",
+          "content": "Mobile"
+        },
+        {
+          "type": "range",
+          "id": "mobile_horizontal_position",
+          "label": "Horizontal position",
+          "min": 10,
+          "max": 100,
+          "step": 1,
+          "unit": "%",
+          "default": 10
+        },
+        {
+          "type": "range",
+          "id": "mobile_Vertical_position",
           "label": "Vertical position",
           "min": 10,
           "max": 100,

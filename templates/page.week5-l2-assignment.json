@@ -16,6 +16,8 @@
           "settings": {
             "horizontal_position": 40,
             "Vertical_position": 35,
+            "mobile_horizontal_position": 17,
+            "mobile_Vertical_position": 39,
             "hotspot_product": "water-resistant-snow-hoodie"
           }
         },
@@ -24,6 +26,8 @@
           "settings": {
             "horizontal_position": 38,
             "Vertical_position": 19,
+            "mobile_horizontal_position": 29,
+            "mobile_Vertical_position": 20,
             "hotspot_product": "high-performance-snow-goggles"
           }
         },
@@ -32,6 +36,8 @@
           "settings": {
             "horizontal_position": 70,
             "Vertical_position": 67,
+            "mobile_horizontal_position": 88,
+            "mobile_Vertical_position": 69,
             "hotspot_product": "beginners-guide-to-snowboarding-dvd"
           }
         }
