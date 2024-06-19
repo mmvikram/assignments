@@ -1,0 +1,148 @@
+.collection-card-wrapper {
+  --height-heading: 6rem;
+  --translate-from-top: calc(var(--height-heading) / 2);
+  --collection-card-border-radius: 20px;
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  border: 1px solid;
+  border-radius: var(--collection-card-border-radius);
+  padding: calc(var(--height-heading) / 3) 2rem;
+}
+.collection-card-wrapper * {
+  font-family: "One Night Sans", sans-serif;
+}
+
+.collection-card-wrapper .heading-wrapper {
+  isolation: isolate;
+  position: absolute;
+  width: fit-content;
+  font-size: 30px;
+  top: calc(var(--translate-from-top) * -1);
+  left: 15%;
+  background-color: #fff;
+  border-radius: var(--collection-card-border-radius);
+  height: var(--height-heading);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.collection-card-wrapper h4 {
+  height: 100%;
+  font-size: 26px;
+  padding: 0 3rem;
+  margin: 0;
+  background-color: #fff;
+  border-radius: var(--collection-card-border-radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.collection-card-wrapper .images-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.collection-card-wrapper .images-container {
+  margin-right: 0;
+}
+
+.hidden-heading:empty {
+  display: block;
+}
+
+.collection-card-wrapper img {
+  max-width: 130px;
+  object-fit: contain;
+  margin-top: 4rem;
+}
+
+.collection-card-wrapper .collection-description {
+  text-align: center;
+  font-weight: 500;
+}
+
+.heading-wrapper h4 {
+  position: relative;
+  isolation: isolate;
+  font-weight: 900;
+}
+
+.heading-wrapper h4::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: calc(var(--height-heading) - var(--translate-from-top));
+  inset: auto 0 0 0;
+  background-color: white;
+  border-radius: 0 0 calc(var(--collection-card-border-radius) / 2)
+    calc(var(--collection-card-border-radius) / 2);
+  border-bottom: 1px solid var(--border-color-hidden);
+  border-inline: 1px solid var(--border-color-hidden);
+  box-sizing: content-box;
+  z-index: -1;
+}
+
+.collection-card-wrapper .collection-description {
+  font-weight: bold;
+}
+
+@media screen and (max-width: 749px) {
+  .collection-card-wrapper img {
+    max-width: 75px;
+  }
+  .heading-wrapper h4 {
+    font-size: 14px;
+    padding: 0 1rem;
+  }
+
+  .collection-description {
+    font-size: 10px;
+  }
+  .collection-card-wrapper {
+    --height-heading: 4rem;
+    --translate-from-top: calc(var(--height-heading) / 2);
+    --collection-card-border-radius: 14px;
+
+    justify-content: space-between;
+  }
+  .collection-card-wrapper .heading-wrapper {
+    left: 10%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .heading-wrapper h4 {
+    font-size: 12px;
+    padding: 0 1rem;
+  }
+}
+@keyframes fadeInSlideUp {
+  from {
+    opacity: 0;
+    filter: blur(2px);
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0px);
+  }
+}
+
+.fade-in-slide-up {
+  opacity: 0;
+  transform: translateY(40px); /* Initial position for slide-up effect */
+  animation-fill-mode: forwards;
+  animation-duration: 0.5s;
+  animation-name: fadeInSlideUp;
+  animation-delay: var(--animation-delay, 0s);
+}

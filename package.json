@@ -1,0 +1,20 @@
+{
+	"name": "dawn-practice",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"dev": "shopify theme dev -s b04-vikram.myshopify.com",
+		"dev-sync": "shopify theme dev --theme-editor-sync -s b04-vikram.myshopify.com",
+		"pull": "shopify theme pull -s b04-vikram.myshopify.com",
+		"pull-json": "shopify theme pull -d -o *.json -s b04-vikram.myshopify.com",
+		"share": "shopify theme share -s b04-vikram.myshopify.com"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"@shopify/prettier-plugin-liquid": "^1.5.0",
+		"prettier": "^3.3.2"
+	}
+}

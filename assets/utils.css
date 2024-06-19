@@ -1,0 +1,38 @@
+/* ============= FLEX PROPERTIES =============  */
+.flex {
+  display: flex;
+}
+.items-center {
+  align-items: center;
+}
+.justify-center {
+  justify-content: center;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.flex-col {
+  flex-direction: column;
+}
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* ============= FLEX PROPERTIES =============  */
+
+.w-full {
+  width: 100%;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.mr-auto {
+  margin-right: auto;
+}
+
+.hidden {
+  display: none;
+}

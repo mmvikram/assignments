@@ -1,0 +1,83 @@
+.collection-by-name-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.collection-by-name-wrapper * {
+  font-family: "One Night Sans", sans-serif;
+}
+.collection-by-name-wrapper-heading {
+  font-size: 42px;
+  font-weight: 900;
+  margin-block: 1.5rem;
+}
+
+.collection-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+.collection-sections {
+  width: 100%;
+  margin-inline: auto;
+  margin-bottom: 3rem;
+}
+.collection-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: calc(var(--height-heading) / 3);
+  padding-inline: 1rem;
+}
+.collection-section > * {
+  flex-basis: 300px;
+  flex-grow: 1;
+  flex-shrink: 0;
+}
+
+.collection-by-name-wrapper .collection-button {
+  padding: 1.5rem 2.5rem;
+  border: 1px solid #005cab;
+  color: #005cab;
+  background: white;
+  font-size: 20px;
+  border-radius: 6px;
+  outline: none;
+  cursor: pointer;
+  transition:
+    color,
+    background-color,
+    transform 0.3s ease-in-out;
+}
+
+.collection-by-name-wrapper .collection-button:hover {
+  background-color: rgba(0, 92, 171, 0.15);
+  color: rgb(0, 117, 220);
+}
+.collection-by-name-wrapper .collection-button:active {
+  transform: scaleX(0.97) scaleY(1.03);
+}
+.collection-by-name-wrapper .collection-button.active {
+  background-color: #005cab;
+  color: white;
+  box-shadow: 0px 4px 4px 0 rgba(27, 66, 152, 0.5);
+}
+
+@media screen and (max-width: 749px) {
+  .collection-section {
+    justify-content: center;
+    gap: var(--height-heading, 4rem);
+  }
+  .collection-section > * {
+    flex-basis: 150px;
+  }
+  .collection-by-name-wrapper-heading {
+    font-size: 26px;
+  }
+  .collection-by-name-wrapper .collection-button {
+    font-size: 16px;
+  }
+}

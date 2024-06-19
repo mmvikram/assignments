@@ -1,0 +1,30 @@
+{{ 'section-pexels.css' | asset_url | stylesheet_tag }}
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js" defer></script>
+<link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
+<script src="{{ 'section-pexels.js' | asset_url }}" defer></script>
+<div class="pexels-container page-width">
+  <div class="search-bar">
+  <input type="text" id="searchBar" placeholder="Search for images...">
+    <button id="searchButton">
+    {% render "icon-search" %}
+    </button>
+  </div>
+
+  <div id="photoContainer"></div>
+  <section class="similar-results-section"></section>
+  <section class="fav-section"></section>
+</div>
+{% schema %}
+{
+  "name": "Pexels",
+  "tag": "section",
+  "settings": [
+
+  ],
+  "presets": [
+    {
+      "name": "Pexels"
+    }
+  ]
+}
+{% endschema %}

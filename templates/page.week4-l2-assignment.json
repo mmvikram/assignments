@@ -1,0 +1,155 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "image_with_text_flip_ABbeDb": {
+      "type": "image-with-text-flip",
+      "blocks": {
+        "hero_image_theWLN": {
+          "type": "Hero_Image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/image-2_e64f5dd1-b631-45c9-a311-92f7fc71cd11.png",
+            "position_x1": 20,
+            "position_y1": 20,
+            "focal_point1_text": "Goggles",
+            "position_x2": 15,
+            "position_y2": 69,
+            "focal_point2_text": "Snow Board",
+            "position_x3": 0,
+            "position_y3": 0,
+            "focal_point3_text": ""
+          }
+        },
+        "hero_image_wNBeUa": {
+          "type": "Hero_Image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/image-1_776005a7-8429-4181-8197-d91eb9cd4821.png",
+            "position_x1": 14,
+            "position_y1": 69,
+            "focal_point1_text": "Snow Board",
+            "position_x2": 56,
+            "position_y2": 45,
+            "focal_point2_text": "T-Shirt",
+            "position_x3": 0,
+            "position_y3": 0,
+            "focal_point3_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "hero_image_theWLN",
+        "hero_image_wNBeUa"
+      ],
+      "settings": {
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "mobile_padding_top": 30,
+        "mobile_padding_bottom": 20,
+        "heading": "Apparel & Accessories",
+        "pre_heading": "Be Winter Ready",
+        "description": "<p>Our carefully curated collection features high-quality gloves, hats, scarves, goggle jackets, and more, designed to withstand the harshest winter conditions while enhancing your performance.<\/p>",
+        "flip_text_image": false,
+        "button_label": "Shop now",
+        "button_link": "#",
+        "background_color": "#eaf3f8"
+      }
+    },
+    "categories_by_name_XkGTgf": {
+      "type": "categories-by-name",
+      "blocks": {
+        "collection_card_6V79pq": {
+          "type": "collection-card",
+          "settings": {
+            "heading": "Real feel",
+            "collection_name": "Condoms",
+            "description": "Natural skin on skin feeling",
+            "background": "#fff7e7",
+            "image-1": "shopify:\/\/shop_images\/1_2_2.png"
+          }
+        },
+        "collection_card_dTkD6x": {
+          "type": "collection-card",
+          "settings": {
+            "heading": "Climax Delay",
+            "collection_name": "Condoms",
+            "description": "To pleasure both",
+            "background": "#ececec",
+            "image-1": "shopify:\/\/shop_images\/3_1_2.png",
+            "image-2": "shopify:\/\/shop_images\/2_1_1.png"
+          }
+        },
+        "collection_card_CiwgtG": {
+          "type": "collection-card",
+          "settings": {
+            "heading": "Intense",
+            "collection_name": "Lubes",
+            "description": "For Tingling Sensation",
+            "background": "#ffecf5",
+            "image-1": "shopify:\/\/shop_images\/7_2.png"
+          }
+        },
+        "collection_card_RUezUb": {
+          "type": "collection-card",
+          "settings": {
+            "heading": "Stimulation",
+            "collection_name": "Lubes",
+            "description": "Ribbed and Dotted to pleasure her",
+            "background": "#fefbef",
+            "image-1": "shopify:\/\/shop_images\/8_1.png",
+            "image-2": "shopify:\/\/shop_images\/9_1.png"
+          }
+        },
+        "collection_card_4NEKm8": {
+          "type": "collection-card",
+          "settings": {
+            "heading": "Flavoured",
+            "collection_name": "Lubes",
+            "description": "Feeling of flavour",
+            "background": "#ffeef0",
+            "image-1": "shopify:\/\/shop_images\/10_1.png",
+            "image-2": "shopify:\/\/shop_images\/11_1.png",
+            "image-3": "shopify:\/\/shop_images\/12_1_1.png"
+          }
+        },
+        "collection_card_Apx6jH": {
+          "type": "collection-card",
+          "settings": {
+            "heading": "Thin",
+            "collection_name": "Condoms",
+            "description": "For Greater Sensitivity",
+            "background": "#effeff",
+            "image-1": "shopify:\/\/shop_images\/4_1_4.png",
+            "image-2": "shopify:\/\/shop_images\/5_1_1.png",
+            "image-3": "shopify:\/\/shop_images\/6_1_1.png"
+          }
+        }
+      },
+      "block_order": [
+        "collection_card_6V79pq",
+        "collection_card_dTkD6x",
+        "collection_card_CiwgtG",
+        "collection_card_RUezUb",
+        "collection_card_4NEKm8",
+        "collection_card_Apx6jH"
+      ],
+      "settings": {
+        "heading": "What's your Top",
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "mobile_padding_top": 10,
+        "mobile_padding_bottom": 10
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image_with_text_flip_ABbeDb",
+    "categories_by_name_XkGTgf"
+  ]
+}
