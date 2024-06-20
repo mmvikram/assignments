@@ -65,7 +65,12 @@
       {% for hotspot in hotspots %}
         <button
           data-index='{{forloop.index0}}'
-          class='hotspot animation-stay is-active'></button>
+          class='
+            hotspot animation-stay
+            {% if forloop.first  %}
+              is-active
+            {% endif %}
+          '></button>
       {% endfor %}
       {% render 'responsive-image', desktopImage: image, pictureClass: 'picture-class' %}
     </div>

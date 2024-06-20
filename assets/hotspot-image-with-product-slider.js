@@ -3,23 +3,25 @@ let splide = document.querySelector('.product-cards-slider');
 let hotspots = document.querySelectorAll('.hotspot');
 
 hotspots.forEach((hotspot) => {
+  // To add is-active class to hotspot
   hotspot.addEventListener('click', function (e) {
-    let i = e.target.dataset.index;
+    removeActiveClassFromHotspot();
 
+    let i = e.target.dataset.index;
     splide.splide.go(parseInt(i));
-    removeActiveFromHotspot();
     e.target.classList.add('is-active');
   });
+
+  // To sync arrow buttons with hotspot
   splide.splide.on('move', (newIndex) => {
-    removeActiveFromHotspot();
+    removeActiveClassFromHotspot();
 
-    let hotspot = document.querySelector(`[data-index="${newIndex}"]`);
-
-    hotspot.classList.add('is-active');
+    let currentHotspot = document.querySelector(`[data-index="${newIndex}"]`);
+    currentHotspot.classList.add('is-active');
   });
 });
 
-function removeActiveFromHotspot() {
+function removeActiveClassFromHotspot() {
   hotspots.forEach((hotspot) => {
     if (hotspot.classList.contains('is-active')) {
       hotspot.classList.remove('is-active');
