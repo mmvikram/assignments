@@ -7,12 +7,23 @@ hotspots.forEach((hotspot) => {
     let i = e.target.dataset.index;
 
     splide.splide.go(parseInt(i));
-
-    hotspots.forEach((hotspot) => {
-      if (hotspot.classList.contains('is-active')) {
-        hotspot.classList.remove('is-active');
-      }
-    });
-    e.target.classList.add('is-active');
   });
+  splide.splide.on('move', (newIndex) => {
+    removeActiveFromHotspot();
+
+    let hotspot = document.querySelector(`[data-index="${newIndex}"]`);
+
+    hotspot.classList.add('is-active');
+  });
+
+  removeActiveFromHotspot();
+  e.target.classList.add('is-active');
 });
+
+function removeActiveFromHotspot() {
+  hotspots.forEach((hotspot) => {
+    if (hotspot.classList.contains('is-active')) {
+      hotspot.classList.remove('is-active');
+    }
+  });
+}

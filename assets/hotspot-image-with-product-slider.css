@@ -231,3 +231,16 @@
     transform: scale(1);
   }
 }
+
+@keyframes stay {
+  0% {
+    top: 0;
+    left: 0;
+    transform: scale(1.5);
+    opacity: 0.7;
+  }
+}
+
+.animation-stay {
+  animation: stay 1.5s ease-in-out;
+}
