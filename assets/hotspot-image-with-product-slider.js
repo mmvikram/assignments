@@ -7,6 +7,8 @@ hotspots.forEach((hotspot) => {
     let i = e.target.dataset.index;
 
     splide.splide.go(parseInt(i));
+    removeActiveFromHotspot();
+    e.target.classList.add('is-active');
   });
   splide.splide.on('move', (newIndex) => {
     removeActiveFromHotspot();
@@ -15,9 +17,6 @@ hotspots.forEach((hotspot) => {
 
     hotspot.classList.add('is-active');
   });
-
-  removeActiveFromHotspot();
-  e.target.classList.add('is-active');
 });
 
 function removeActiveFromHotspot() {
