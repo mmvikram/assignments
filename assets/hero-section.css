@@ -1,0 +1,163 @@
+.hero-section-wrapper {
+  margin-top: 15rem;
+}
+.hero-section-outer-wrapper {
+  display: flex;
+  align-items: start;
+  isolation: isolate;
+  justify-content: center;
+  background: linear-gradient(to top right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.9));
+  /* background: linear-gradient(to top right, #09090a, #18181b); */
+  min-height: 100dvh;
+  min-height: 100vh;
+  position: relative;
+}
+
+.split-animation {
+  font-weight: bolder;
+  color: white;
+  font-size: 64px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.4em;
+  font-size: clamp(2rem, -1.1818rem + 14.5455vw, 7rem);
+}
+
+.split-animation div:empty {
+  min-width: 0.4em;
+  display: block;
+}
+
+.word-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.word-wrapper div {
+  transform: translateY(100%);
+  filter: blur(3px);
+  opacity: 0.5;
+  transition: all 0.5s ease;
+}
+
+.animation-slide-in {
+  animation: slideIN 0.4s cubic-bezier(0, 0.55, 0.45, 1) var(--delay, 0s) forwards;
+}
+
+@keyframes slideIN {
+  50% {
+    filter: blur(2px);
+    opacity: 0.7;
+  }
+  100% {
+    filter: blur(0px);
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.buttons--container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  font-size: clamp(1.25rem, 0.9412rem + 1.4118vw, 2rem);
+}
+.gradient-button {
+  text-decoration-line: none;
+  padding: 0.4em 1.2em;
+  font-family: inherit;
+  border: none;
+  outline: none;
+
+  position: relative;
+  isolation: isolate;
+  color: white;
+  border-radius: 0.6rem;
+  overflow: hidden;
+  cursor: pointer;
+  /* border-radius: 0.4rem; */
+}
+
+.gradient-button::before {
+  content: '';
+  position: absolute;
+  background-color: black;
+  /* inset: 1.5px 1.5px 1.2px; */
+  inset: 1.5px;
+  border-radius: inherit;
+  z-index: -1;
+}
+.gradient-button::after {
+  content: '';
+  position: absolute;
+  /* background: linear-gradient(to top right, #24c6dc, #514a9d); */
+  /* background: linear-gradient(to bottom right, #283048, #859398); */
+  background: linear-gradient(to bottom right, #283048, #697376);
+  inset: 0;
+  width: 200%;
+  z-index: -2;
+  transition: all 0.3s ease;
+}
+
+.gradient-button:hover::after {
+  filter: brightness(1.2) saturate(150%) hue-rotate(90deg);
+}
+
+.opacity-animation {
+  opacity: 0;
+  animation: opacityKeyframes 1s ease var(--delay) forwards;
+}
+
+@keyframes opacityKeyframes {
+  100% {
+    opacity: 1;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .follower:empty {
+    display: block;
+  }
+}
+.follower {
+  width: 35px;
+  height: 35px;
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 9999px;
+  transition: transform 0.1s ease;
+  position: fixed;
+  /* left: var(--left, 0px);
+  
+  top: var(--top, 0px); */
+  left: 0;
+  top: 0;
+  transform: translateX(var(--left)) translateY(var(--top)) scale(var(--scale, 1));
+  pointer-events: none;
+  z-index: 1;
+  backdrop-filter: invert(100%);
+}
+
+.gradient-button.highlight-button:hover::after {
+  animation-play-state: paused;
+  filter: brightness(2);
+}
+.gradient-button.highlight-button::after {
+  /* background: linear-gradient(to right, #1a2980, #26d0ce); */
+  background: linear-gradient(to bottom right, #384468, #bfcace);
+}
+
+.glowing-button::after {
+  animation: glowing 0.5s ease alternate infinite;
+}
+
+@keyframes glowing {
+  100% {
+    filter: brightness(1.8) blur(2px);
+  }
+}
