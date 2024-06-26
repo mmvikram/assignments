@@ -79,6 +79,7 @@
     },
     "related-products": {
       "type": "related-products",
+      "disabled": true,
       "settings": {
         "heading": "You may also like",
         "heading_size": "h2",
@@ -94,10 +95,26 @@
         "padding_top": 36,
         "padding_bottom": 28
       }
+    },
+    "featured_collection_veena_RaLXfF": {
+      "type": "featured-collection-veena",
+      "settings": {
+        "heading": "You may also like",
+        "collection": "veena-collection",
+        "slide_type": "loop",
+        "slide_per_page": 4,
+        "pagination": false,
+        "arrows": true,
+        "autoplay": false,
+        "autoplay_interval": 3,
+        "padding_top": 28,
+        "padding_bottom": 27
+      }
     }
   },
   "order": [
     "main",
-    "related-products"
+    "related-products",
+    "featured_collection_veena_RaLXfF"
   ]
 }

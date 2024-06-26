@@ -1,0 +1,115 @@
+{% assign qty = product.first_available_variant.inventory_quantity %}
+<div class='quick-look-card'>
+  <div class='quick-look-card__image-wrapper isolate'>
+    <button
+      class='quick-look-card__quick-look-btn quick-look-btn small-hide'
+      data-url='{{product.url}}'>
+      Quick look
+
+      <div class='loader'></div>
+    </button>
+
+    {% if product.tags %}
+      <div class='quick-look-card__tags'>
+        {% for tag in product.tags %}
+          <div
+            class='
+              quick-look-card__tag uppercase
+              {% if tag == 'sale' %}
+              green
+              {% endif %}
+            '>
+            {{ tag }}
+          </div>
+        {% endfor %}
+
+        {% if product.compare_at_price != blank %}
+          {% assign original_price = product.compare_at_price %}
+          {% assign current_price = product.price %}
+          {% assign discount_percentage = original_price
+            | minus: current_price
+            | times: 100
+            | divided_by: original_price
+            | round
+          %}
+          <div
+            class='
+              quick-look-card__tag
+              red
+            '>
+            {{ discount_percentage }}% off
+          </div>
+        {% endif %}
+      </div>
+    {% endif %}
+    <button
+      data-url='{{product.url}}'
+      class='quick-look-card__quick-look-eye-btn quick-look-btn medium-hide large-up-hide'>
+      {% render 'icon-eye' %}
+    </button>
+    <div class='quick-look-card__image-wrapper__featured-image absolute inset-0'>
+      {% render 'responsive-image', desktopImage: product.featured_image %}
+    </div>
+
+    {% for variant in product.variants %}
+      <div
+        data-variant='{{variant.id}}'
+        class='
+          quick-look-card__image-wrapper__image
+          {% unless forloop.first %}
+            hidden
+          {% endunless %}
+        '>
+        {% render 'responsive-image', desktopImage: variant.image %}
+      </div>
+    {% endfor %}
+  </div>
+  <div class='quick-look-card__variant-picker'>
+    {%- for option in product.options_with_values %}
+      {% for color in option.values %}
+        {% if color.swatch.color %}
+          <div
+            class='quick-look-card__variant-picker-variant'
+            style='background-color: {{color.swatch.color}};'></div>
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+  </div>
+
+  <div class='quick-look-card__content'>
+    {% if product.vendor != blank %}
+      <div class='quick-look-card__content-vendor'>{{ product.vendor }}</div>
+    {% endif %}
+
+    {% if product.title != blank %}
+      <div class='quick-look-card__content-title medium-hide large-up-hide'>
+        {{ product.title | truncate: 20 }}
+      </div>
+      <div class='quick-look-card__content-title small-hide'>{{ product.title }}</div>
+    {% endif %}
+
+    <div class='quick-look-card__content-price-container'>
+      <div class='price'>
+        {% if product.compare_at_price != blank %}
+          From
+        {% endif %}
+        {{ product.price | money }}
+      </div>
+      {% if product.compare_at_price != blank %}
+        <div class='compare_at_price'>{{ product.compare_at_price | money }}</div>
+      {% endif %}
+    </div>
+
+    <div
+      class='
+        quick-look-card__content-stock-info
+        {% if qty  <= 10 %}
+        low
+        {% endif %}
+      '>
+      {% if qty <= 10 %} Only {% endif %}
+      {{ qty }}
+      {% if qty <= 10 %} left {% endif %} in stock
+    </div>
+  </div>
+</div>

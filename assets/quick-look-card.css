@@ -1,0 +1,263 @@
+.quick-look-card {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.quick-look-card__tags {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  z-index: 3;
+}
+
+.red {
+  background-color: rgb(208, 60, 63);
+}
+
+.green {
+  background-color: #22750e;
+}
+
+.quick-look-card__tags {
+  position: absolute;
+  top: 1.5rem;
+  left: 1rem;
+  font-size: 0.9rem;
+}
+.quick-look-card__tag {
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  color: white;
+}
+.uppercase {
+  text-transform: uppercase;
+}
+
+.quick-look-card__quick-look-eye-btn,
+.quick-look-card__quick-look-btn {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  font-family: 'Harmonia Sans', sans-serif;
+  z-index: 3;
+  border-radius: 9999px;
+  cursor: pointer;
+  background-color: black;
+  fill: white;
+  border: none;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.quick-look-card__quick-look-eye-btn::before,
+.quick-look-card__quick-look-btn::before,
+.featured-collection-veena-wrapper .splide__arrow::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  background-color: rgb(208, 60, 63);
+  border-radius: 999px;
+  z-index: -1;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease;
+}
+
+.featured-collection-veena-wrapper .splide__arrow--prev::before {
+  border-radius: 0 999px 999px 0;
+}
+.featured-collection-veena-wrapper .splide__arrow--next::before {
+  border-radius: 999px 0 0 999px;
+}
+.featured-collection-veena-wrapper .splide__arrow::before {
+  background-color: black;
+  transition: transform 0.3s ease;
+}
+
+.quick-look-card__quick-look-eye-btn:hover::before,
+.quick-look-card__quick-look-btn:hover::before,
+.featured-collection-veena-wrapper .splide__arrow:hover::before {
+  transform: scaleX(1);
+}
+.quick-look-card__quick-look-btn {
+  padding: 6px 10px;
+  color: white;
+  font-size: 1.4rem;
+}
+
+.quick-look-card__quick-look-eye-btn svg {
+  pointer-events: none;
+}
+.quick-look-card__quick-look-eye-btn {
+  width: 3.5rem;
+  height: 3.5rem;
+}
+.quick-look-card__variant-picker {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+}
+.quick-look-card__variant-picker-variant:first-of-type {
+  outline: 1px solid rgb(208, 60, 63);
+  outline-offset: 2px;
+}
+
+.quick-look-card__image-wrapper img {
+  border-radius: 1.6rem;
+  width: 100%;
+  height: auto;
+  /* height: 100%; */
+  /* max-height: 400px; */
+  object-fit: cover;
+}
+.quick-look-card__image-wrapper:hover .quick-look-card__image-wrapper__image {
+  opacity: 0;
+}
+.quick-look-card__image-wrapper__image {
+  transition: opacity 0.3s ease;
+}
+.quick-look-card__image-wrapper__featured-image {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+.quick-look-card__content-title {
+  font-size: 1.8rem;
+  color: black;
+  font-weight: 100;
+}
+.quick-look-card__variant-picker-variant:empty {
+  display: block;
+}
+.quick-look-card__variant-picker-variant {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 999px;
+  background-color: black;
+}
+
+.quick-look-card__content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.quick-look-card__content-price-container {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.quick-look-card__content .compare_at_price {
+  columns: rgba(0, 0, 0, 0.5);
+  text-decoration-line: line-through;
+  font-size: 1.3rem;
+}
+
+.quick-look-card__content-stock-info.low {
+  color: red;
+}
+
+.quick-look-card__content-stock-info {
+  color: green;
+}
+
+.quick-look-card__content-price-container .price {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+.quick-look-card__content-price-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.featured-collection-veena-wrapper .splide__arrow svg {
+  fill: white;
+}
+
+.featured-collection-veena-wrapper .splide__arrow {
+  width: 3.4rem;
+  height: 3.4rem;
+  background-color: red;
+  top: 40%;
+  overflow: hidden;
+}
+
+.featured-collection-veena-wrapper .splide__arrow--prev {
+  border-radius: 0 999px 999px 0;
+  left: 0;
+}
+.featured-collection-veena-wrapper .splide__arrow--next {
+  border-radius: 999px 0 0 999px;
+  right: 0;
+}
+
+.quick-look-btn:hover .loader {
+  border-color: #fff rgb(208, 60, 63) #fff rgb(208, 60, 63);
+}
+
+.quick-look-btn.loading .loader {
+  display: block;
+}
+.loader {
+  display: block;
+  width: 20px;
+  height: 20px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 3px solid;
+  border-color: #fff #000 #fff #000;
+  animation: l1 1s infinite;
+  margin-left: 4px;
+}
+@keyframes l1 {
+  to {
+    transform: rotate(0.5turn);
+  }
+}
+
+@media screen and (max-width: 749px) {
+  .quick-look-card__content-price-container .price {
+    font-size: 1.5rem;
+  }
+  .quick-look-card__content-title {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  .quick-look-card__content .compare_at_price {
+    font-size: 1.35rem;
+  }
+  .quick-look-card__content-stock-info {
+    font-size: 1.4rem;
+  }
+  .quick-look-card__content-vendor {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .quick-look-card__content-price-container .price {
+    font-size: 1.3rem;
+  }
+  .quick-look-card__content-title {
+    font-size: 1.3rem;
+    text-align: center;
+  }
+  .quick-look-card__content .compare_at_price {
+    font-size: 1.15rem;
+  }
+  .quick-look-card__content-stock-info {
+    font-size: 1.2rem;
+  }
+  .quick-look-card__content-vendor {
+    font-size: 1rem;
+  }
+}

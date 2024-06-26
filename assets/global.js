@@ -1006,9 +1006,18 @@ class SlideshowComponent extends SliderComponent {
 customElements.define('slideshow-component', SlideshowComponent);
 
 class VariantSelects extends HTMLElement {
+  static observedAttributes = ['data-inmodal'];
+
   constructor() {
     super();
     this.addEventListener('change', this.onVariantChange);
+    this.inModal = false;
+  }
+
+  attributeChangedCallback(name, oldValue, newValue) {
+    if (name === 'data-inmodal' && oldValue !== newValue) {
+      this.inModal = !this.inModal;
+    }
   }
 
   onVariantChange(event) {
@@ -1080,6 +1089,8 @@ class VariantSelects extends HTMLElement {
   }
 
   updateURL() {
+    // console.log('inmodal', this.dataset.inmodal);
+    // if (this.inModal) return;
     if (!this.currentVariant || this.dataset.updateUrl === 'false') return;
     window.history.replaceState({}, '', `${this.dataset.url}?variant=${this.currentVariant.id}`);
   }
