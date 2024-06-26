@@ -47,12 +47,15 @@
       class='quick-look-card__quick-look-eye-btn quick-look-btn medium-hide large-up-hide'>
       {% render 'icon-eye' %}
     </button>
-    <div class='quick-look-card__image-wrapper__featured-image absolute inset-0'>
+    <a
+      href='{{product.url}}'
+      class='quick-look-card__image-wrapper__featured-image absolute inset-0'>
       {% render 'responsive-image', desktopImage: product.featured_image %}
-    </div>
+    </a>
 
     {% for variant in product.variants %}
-      <div
+      <a
+        href='{{product.url}}'
         data-variant='{{variant.id}}'
         class='
           quick-look-card__image-wrapper__image
@@ -61,7 +64,7 @@
           {% endunless %}
         '>
         {% render 'responsive-image', desktopImage: variant.image %}
-      </div>
+      </a>
     {% endfor %}
   </div>
   <div class='quick-look-card__variant-picker'>

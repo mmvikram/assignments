@@ -105,6 +105,9 @@
   outline-offset: 2px;
 }
 
+.quick-look-card__image-wrapper {
+  text-decoration-line: none;
+}
 .quick-look-card__image-wrapper img {
   border-radius: 1.6rem;
   width: 100%;
