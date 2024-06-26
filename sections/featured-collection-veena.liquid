@@ -1,5 +1,8 @@
 {{ 'featured-collection-veena.css' | asset_url | stylesheet_tag }}
 {{ 'quick-look-card.css' | asset_url | stylesheet_tag }}
+{% if section.settings.hover %}
+  {{ 'quick-look-card-hover.css' | asset_url | stylesheet_tag }}
+{% endif %}
 <script src='{{ 'featured-collection-veena.js' | asset_url }}' defer></script>
 <script src='{{ 'quick-look-card.js' | asset_url }}' defer></script>
 
@@ -49,7 +52,11 @@
         <ul class='splide__list'>
           {% for product in section.settings.collection.products %}
             <li class='splide__slide'>
-              {% render 'quick-look-card', product: product %}
+              {% render 'quick-look-card',
+                product: product,
+                hover: section.settings.hover,
+                stockThreshold: section.settings.low_stock_threshold
+              %}
             </li>
           {% endfor %}
         </ul>
@@ -66,6 +73,17 @@
   "settings": [
     { "type": "text", "label": "Heading", "id": "heading" },
     { "type": "collection", "id": "collection", "label": "Collection" },
+    { "type": "checkbox", "id": "hover", "label": "Enable Card hover animation" },
+    {
+      "type": "range",
+      "min": 1,
+      "max": 100,
+      "step": 1,
+      "default": 10,
+      "label": "Low Stock warning threshold",
+      "info": "Changes text color to red indicating low stock",
+      "id": "low_stock_threshold"
+    },
     {
       "type": "header",
       "content": "Slider settings"

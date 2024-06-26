@@ -101,6 +101,8 @@
       "settings": {
         "heading": "You may also like",
         "collection": "veena-collection",
+        "hover": true,
+        "low_stock_threshold": 15,
         "slide_type": "loop",
         "slide_per_page": 4,
         "pagination": false,

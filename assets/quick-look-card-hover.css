@@ -1,0 +1,11 @@
+.quick-look-card__image-wrapper:hover .quick-look-card__image-wrapper__image {
+  opacity: 0;
+}
+.quick-look-card__image-wrapper__image {
+  transition: opacity 0.3s ease;
+}
+.quick-look-card__image-wrapper__featured-image {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}

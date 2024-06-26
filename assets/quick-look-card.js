@@ -78,3 +78,36 @@ function hideModal() {
     { once: true },
   );
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  handleColorVariantHover();
+});
+
+function handleColorVariantHover() {
+  let colorButtons = document.querySelectorAll('.quick-look-card__variant-picker-variant');
+
+  colorButtons.forEach((button) => {
+    button.addEventListener('mouseover', (e) => {
+      let quickLookCard = button.closest('.quick-look-card');
+      let pictureElement = quickLookCard.querySelector('.showing-image').parentElement;
+
+      let currentCardButtons = quickLookCard.querySelectorAll(
+        '.quick-look-card__variant-picker-variant',
+      );
+
+      currentCardButtons.forEach((colorButton) => {
+        colorButton.classList.remove('selected-outline');
+      });
+      button.classList.add('selected-outline');
+
+      let imgElement = pictureElement.querySelector('img');
+      let sourceElement = pictureElement.querySelector('source');
+
+      let imageUrl = e.target.dataset.imageUrl;
+      let imageSrcset = `${imageUrl} 375w, ${imageUrl} 493w`;
+
+      imgElement.src = imageUrl;
+      sourceElement.srcset = imageSrcset;
+    });
+  });
+}

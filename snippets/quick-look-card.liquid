@@ -5,7 +5,6 @@
       class='quick-look-card__quick-look-btn quick-look-btn small-hide'
       data-url='{{product.url}}'>
       Quick look
-
       <div class='loader'></div>
     </button>
 
@@ -47,32 +46,38 @@
       class='quick-look-card__quick-look-eye-btn quick-look-btn medium-hide large-up-hide'>
       {% render 'icon-eye' %}
     </button>
-    <a
-      href='{{product.url}}'
-      class='quick-look-card__image-wrapper__featured-image absolute inset-0'>
-      {% render 'responsive-image', desktopImage: product.featured_image %}
-    </a>
 
-    {% for variant in product.variants %}
+    {% if hover %}
       <a
         href='{{product.url}}'
-        data-variant='{{variant.id}}'
-        class='
-          quick-look-card__image-wrapper__image
-          {% unless forloop.first %}
-            hidden
-          {% endunless %}
-        '>
-        {% render 'responsive-image', desktopImage: variant.image %}
+        class='quick-look-card__image-wrapper__featured-image absolute inset-0'>
+        {% render 'responsive-image', desktopImage: product.featured_image %}
       </a>
-    {% endfor %}
+    {% endif %}
+
+    {% comment %} {% for variant in product.variants %} {% endcomment %}
+    <a
+      href='{{product.url}}'
+      data-variant='{{product.variants.first.id}}'
+      class='quick-look-card__image-wrapper__image'>
+      {% render 'responsive-image',
+        desktopImage: product.variants.first.image,
+        img-class: 'showing-image'
+      %}
+    </a>
+    {% comment %} {% endfor %} {% endcomment %}
   </div>
   <div class='quick-look-card__variant-picker'>
     {%- for option in product.options_with_values %}
       {% for color in option.values %}
+        {% assign product_variant = product.variants | where: 'option1', color %}
         {% if color.swatch.color %}
           <div
-            class='quick-look-card__variant-picker-variant'
+            data-image-url='{{product_variant.first.image |  image_url: width: "500"}}'
+            class='
+              quick-look-card__variant-picker-variant {% if forloop.first %}
+              selected-outline{% endif %}
+            '
             style='background-color: {{color.swatch.color}};'></div>
         {% endif %}
       {% endfor %}
@@ -106,13 +111,13 @@
     <div
       class='
         quick-look-card__content-stock-info
-        {% if qty  <= 10 %}
+        {% if qty  <= stockThreshold %}
         low
         {% endif %}
       '>
-      {% if qty <= 10 %} Only {% endif %}
+      {% if qty <= stockThreshold %} Only {% endif %}
       {{ qty }}
-      {% if qty <= 10 %} left {% endif %} in stock
+      {% if qty <= stockThreshold %} left {% endif %} in stock
     </div>
   </div>
 </div>

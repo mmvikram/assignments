@@ -24,7 +24,6 @@
   display: block;
 }
 
-/* Modal content */
 .modal__content {
   position: fixed;
   overflow-y: scroll;
@@ -36,7 +35,15 @@
   animation: modal-slide-down 0.5s;
 }
 
-/* Close button */
+.modal__content::-webkit-scrollbar {
+  display: none;
+}
+
+.modal__content {
+  -ms-overflow-style: none;
+  scrollbar-width: thin;
+}
+
 .modal__close-btn {
   color: #aaa;
   font-size: 28px;
