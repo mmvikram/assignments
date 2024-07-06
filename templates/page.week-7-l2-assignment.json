@@ -31,11 +31,22 @@
             "author_designation": "Clients",
             "author_image": "shopify:\/\/shop_images\/48fd745fbd3a6ce8ce273f8b6fb14567.jpg"
           }
+        },
+        "testimonial_HApMkg": {
+          "type": "testimonial",
+          "settings": {
+            "product_image": "shopify:\/\/shop_images\/eiliv-aceron-ZuIDLSz3XLg-unsplash_1.jpg",
+            "author": "Mr. Doe John",
+            "author_review": "<p>“Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque “<\/p>",
+            "author_designation": "Customer",
+            "author_image": "shopify:\/\/shop_images\/48fd745fbd3a6ce8ce273f8b6fb14567.jpg"
+          }
         }
       },
       "block_order": [
         "testimonial_fhF8cW",
-        "testimonial_PwA6ie"
+        "testimonial_PwA6ie",
+        "testimonial_HApMkg"
       ],
       "settings": {
         "heading": "Testimonials",
