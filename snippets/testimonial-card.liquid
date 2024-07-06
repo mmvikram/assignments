@@ -1,0 +1,21 @@
+{% liquid
+  assign author = testimonial.settings.author
+  assign author_review = testimonial.settings.author_review
+  assign author_designation = testimonial.settings.author_designation
+  assign author_image = testimonial.settings.author_image
+%}
+
+<div class='testimonial-card'>
+  {{ author_review | replace: '<p', '<p class="testimonial-card__review"' }}
+
+  <div class='testimonial-card__author-info'>
+    <div class='testimonial-card__image-wrapper'>
+      {% render 'responsive-image', desktopImage: author_image %}
+    </div>
+
+    <div class='flex flex-col gap-1'>
+      <span class='testimonial-card__author-name'>{{ author }}</span>
+      <span>{{ author_designation }}</span>
+    </div>
+  </div>
+</div>

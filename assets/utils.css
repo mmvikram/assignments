@@ -41,3 +41,6 @@
 .hidden {
   display: none;
 }
+.rounded-full {
+  border-radius: 9999px;
+}

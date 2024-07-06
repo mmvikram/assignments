@@ -1,0 +1,114 @@
+.testimonial-section {
+  --testimonial-active-color: #f6ffc2;
+  --testimonial-border-color: #5c6e4a;
+  --pagination-active-color: var(--testimonial-border-color);
+  background-color: #fffff5;
+}
+
+.testimonial-section * {
+  font-family: 'Inter', sans-serif;
+}
+.testimonial-section__inner-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.testimonial-section__image-wrapper img {
+  object-fit: cover;
+  max-width: 600px;
+  width: 100%;
+  height: 100%;
+  max-height: 600px;
+  aspect-ratio: 590/620;
+}
+
+.testimonial-section__image-container {
+  display: grid;
+  grid-template-areas: 'image';
+  overflow: hidden;
+  width: fit-content;
+  margin-inline: auto;
+}
+.testimonial-section__image-wrapper picture {
+  line-height: 0;
+  display: block;
+}
+.testimonial-section__image-wrapper {
+  transition: all 0.4s ease;
+}
+.testimonial-section__image-container .testimonial-section__image-wrapper {
+  grid-area: image;
+}
+
+.testimonial-section__header {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.testimonial-section__header h2 {
+  font-size: 5rem;
+  margin: 0;
+}
+.testimonial-section__header p {
+  font-size: 1.5rem;
+  margin: 0;
+  color: #282824;
+}
+.zero-opacity {
+  opacity: 0;
+  transform: scale(1.02);
+  filter: blur(3px);
+}
+.full-opacity {
+  opacity: 1;
+  transform: scale(1);
+  filter: blur(0px);
+}
+
+@media screen and (min-width: 750px) {
+  .testimonial-section {
+    gap: 6rem;
+  }
+  .testimonial-section__header {
+    gap: 4rem;
+  }
+
+  .testimonial-section__header h2 {
+    font-size: 5.6rem;
+    text-align: left;
+  }
+}
+
+/* ---------------------------------------
+SPLIDE CSS
+---------------------------------------*/
+
+.splide__slide.is-active.is-visible {
+  background-color: var(--testimonial-active-color);
+}
+.splide__pagination {
+  gap: 0.4rem;
+  bottom: -3.2rem;
+}
+
+.splide__pagination__page {
+  width: 1.5rem;
+  height: 0.4rem;
+  border-radius: 0.2rem;
+}
+
+.splide__pagination__page.is-active {
+  width: 4rem;
+  background-color: var(--pagination-active-color);
+  transform: none;
+  transform-origin: left;
+  transition: width 0.2s ease;
+}
+
+.splide__pagination__page:is(:focus-visible, :focus) {
+  outline: 2px solid var(--testimonial-border-color);
+  outline-offset: 2px;
+}

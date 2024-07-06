@@ -1,0 +1,53 @@
+.newsletter-form__field-wrapper .field::after {
+  box-shadow: none;
+}
+.newsletter-form__field-wrapper .field input {
+  border-radius: 9999px;
+  border: 1px solid #5c6e4a;
+}
+.newsletter-form__field-wrapper .field {
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.newsletter-form__field-wrapper .field:hover::after {
+  box-shadow: none;
+}
+.newsletter-form__field-wrapper input {
+  border-radius: 999px;
+  background-color: #fff;
+}
+
+.newsletter-form__field-wrapper input:focus-visible {
+  border-radius: 9999px;
+  box-shadow: none;
+}
+.newsletter-form__button.field__button {
+  position: static;
+  padding: 1.5rem 3.5rem;
+  border-radius: 9999px;
+  background-color: #5c6e4a !important;
+  font-family: inherit;
+  width: auto;
+  color: white;
+  font-size: 1.6rem;
+  line-height: 1.6rem;
+}
+
+.newsletter .newsletter__wrapper .newsletter-form__field-wrapper {
+  max-width: 55rem;
+}
+.newsletter-form__field-wrapper {
+  gap: 1.6rem;
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (min-width: 749px) {
+  .newsletter-form__field-wrapper .field {
+    flex-direction: row;
+  }
+  .newsletter .newsletter-form {
+    max-width: 55rem;
+  }
+}

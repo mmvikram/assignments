@@ -4,6 +4,8 @@
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    --font-heading-family: {{section.settings.font}};
+    --font-body-family: {{section.settings.font}};
   }
 
   @media screen and (min-width: 750px) {
@@ -14,14 +16,16 @@
   }
 {%- endstyle -%}
 
-<div class="page-width page-width--narrow section-{{ section.id }}-padding">
-  <h1 class="main-page-title page-title h0{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
-    {{ page.title | escape }}
-  </h1>
-  <div class="rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-    {{ page.content }}
+{% comment %}
+  <div class='page-width page-width--narrow section-{{ section.id }}-padding'>
+    <h1 class='main-page-title page-title h0{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}'>
+      {{ page.title | escape }}
+    </h1>
+    <div class='rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}'>
+      {{ page.content }}
+    </div>
   </div>
-</div>
+{% endcomment %}
 
 {% schema %}
 {
@@ -52,6 +56,12 @@
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
       "default": 36
+    },
+    {
+      "type": "font_picker",
+      "id": "font",
+      "label": "Font",
+      "default": "sans-serif"
     }
   ]
 }

@@ -1,23 +1,86 @@
-/*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
 {
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "padding_top": 28,
-        "padding_bottom": 28
+        "padding_bottom": 28,
+        "font": "inter_n4"
+      }
+    },
+    "testimonial_section_RNnAUf": {
+      "type": "testimonial-section",
+      "blocks": {
+        "testimonial_fhF8cW": {
+          "type": "testimonial",
+          "settings": {
+            "product_image": "shopify:\/\/shop_images\/f95f7fdbbfc4dd291173284893687a4c.jpg",
+            "author": "Mr. John Doe",
+            "author_review": "<p>“Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque “<\/p>",
+            "author_designation": "Clients",
+            "author_image": "shopify:\/\/shop_images\/d79701ab8c86c3f9d226d6384ec13c8d.jpg"
+          }
+        },
+        "testimonial_PwA6ie": {
+          "type": "testimonial",
+          "settings": {
+            "product_image": "shopify:\/\/shop_images\/fruit-salad-spilling-floor-was-mess-vibrant-colors-textures-generative-ai.jpg",
+            "author": "Mr. John Doe",
+            "author_review": "<p>“ Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque “<\/p>",
+            "author_designation": "Clients",
+            "author_image": "shopify:\/\/shop_images\/48fd745fbd3a6ce8ce273f8b6fb14567.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_fhF8cW",
+        "testimonial_PwA6ie"
+      ],
+      "settings": {
+        "heading": "Testimonials",
+        "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<\/p>",
+        "slide_type": "loop",
+        "slide_per_page": 1,
+        "pagination": true,
+        "arrows": false,
+        "autoplay": false,
+        "autoplay_interval": 3,
+        "padding_top": 41,
+        "padding_bottom": 36
+      }
+    },
+    "newsletter_gW8p7i": {
+      "type": "newsletter",
+      "blocks": {
+        "heading_WwhzFJ": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Subscribe to our Newsletter<\/strong>",
+            "heading_size": "h0"
+          }
+        },
+        "email_form_Hbw9EH": {
+          "type": "email_form",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "heading_WwhzFJ",
+        "email_form_Hbw9EH"
+      ],
+      "settings": {
+        "color_scheme": "scheme-ee44f859-c946-4036-8d2b-2373b7f3fb8c",
+        "full_width": true,
+        "padding_top": 96,
+        "padding_bottom": 100
       }
     }
   },
   "order": [
-    "main"
+    "main",
+    "testimonial_section_RNnAUf",
+    "newsletter_gW8p7i"
   ]
 }
