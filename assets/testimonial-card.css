@@ -31,3 +31,9 @@ p.testimonial-card__review {
   border-radius: 9999px;
   object-fit: cover;
 }
+
+@media screen and (max-width: 749px) {
+  .testimonial-card {
+    padding: 2.2rem 1.4rem;
+  }
+}
