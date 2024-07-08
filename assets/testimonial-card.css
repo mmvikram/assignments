@@ -7,7 +7,7 @@
   border: 1px solid var(--testimonial-border-color);
   border-radius: 0.4rem;
   min-width: 280px;
-  height: 100%;
+  height: calc(100% - 1px);
 }
 
 p.testimonial-card__review {
