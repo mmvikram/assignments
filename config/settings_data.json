@@ -139,6 +139,12 @@
         "settings": {
           "color_scheme": "scheme-1"
         }
+      },
+      "liquid-section": {
+        "type": "liquid-section",
+        "settings": {
+          "text": "Liquid Heading 1"
+        }
       }
     },
     "content_for_index": [
