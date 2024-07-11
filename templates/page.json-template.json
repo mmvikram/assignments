@@ -12,6 +12,7 @@
     "main": {
       "type": "json-section",
       "settings": {
+        "text": "JSON Heading 1"
       }
     }
   },
