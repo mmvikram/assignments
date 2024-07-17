@@ -1,0 +1,29 @@
+{% assign product_available = product.selected_or_first_available_variant.available %}
+
+{% if product_available %}
+  <label
+    class='addon-product-card'
+    {% unless product_available %}
+      style='opacity:0.5;'
+    {% endunless %}
+    for='{{product.handle |  handleize}}'>
+    <div class='addon-product-card__image-wrapper'>
+      {% render 'responsive-image',
+        desktopImage: product.featured_image,
+        img-class: 'w-full h-full'
+      %}
+    </div>
+    <div class='addon-product-card__title'>{{ product.title }}</div>
+    <div class='addon-product-card__price'>
+      <div>{{ product.price | money }}</div>
+      <input
+        type='checkbox'
+        class='main-product__addon'
+        {% unless product_available %}
+          disabled
+        {% endunless %}
+        id='{{product.handle |  handleize}}'
+        value='{{product.selected_or_first_available_variant.id}}'>
+    </div>
+  </label>
+{% endif %}

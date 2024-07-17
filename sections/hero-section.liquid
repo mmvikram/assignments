@@ -15,6 +15,9 @@
   }
 </style>
 <div class='{{wrapper}} hero-section-outer-wrapper'>
+  <div class='product-vendor'>
+    {{ all_products['womens-casual-jacket'].vendor }}
+  </div>
   <div class='follower'></div>
   <div class='hero-section-wrapper'>
     <h1
@@ -56,6 +59,25 @@
           {{- section.settings.button_3_label -}}
         </a>
       {% endif %}
+
+      <div class='blocks'>
+        {% for block in section.blocks %}
+          {% case block.type %}
+            {% when 'link-name' %}
+              <div>
+                {{ block.settings.link_name }}
+              </div>
+            {% else %}
+
+            {% when 'link-block' %}
+              <div>
+                {{ block.settings.link_block_heading }}
+              </div>
+            {% else %}
+
+          {% endcase %}
+        {% endfor %}
+      </div>
     </div>
   </div>
 </div>
@@ -171,6 +193,24 @@
       "unit": "px",
       "label": "Bottom Padding",
       "default": 10
+    }
+  ],
+  "blocks": [
+    {
+      "type": "link-name",
+      "name": "Link Name",
+      "settings": [
+        { "type": "text", "label": "Name", "id": "link_name" },
+        { "type": "text", "id": "ref", "label": "reference" }
+      ]
+    },
+    {
+      "type": "link-block",
+      "name": "Link Block",
+      "settings": [
+        { "type": "text", "label": "Name", "id": "link_block_heading" },
+        { "type": "text", "id": "block_ref", "label": "reference" }
+      ]
     }
   ],
   "presets": [{ "name": "Hero section" }]

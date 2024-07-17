@@ -8,10 +8,12 @@ if (!customElements.get('product-form')) {
         this.form = this.querySelector('form');
         this.form.querySelector('[name=id]').disabled = false;
         this.form.addEventListener('submit', this.onSubmitHandler.bind(this));
-        this.cart = document.querySelector('cart-notification') || document.querySelector('cart-drawer');
+        this.cart =
+          document.querySelector('cart-notification') || document.querySelector('cart-drawer');
         this.submitButton = this.querySelector('[type="submit"]');
 
-        if (document.querySelector('cart-drawer')) this.submitButton.setAttribute('aria-haspopup', 'dialog');
+        if (document.querySelector('cart-drawer'))
+          this.submitButton.setAttribute('aria-haspopup', 'dialog');
 
         this.hideErrors = this.dataset.hideErrors === 'true';
       }
@@ -31,17 +33,68 @@ if (!customElements.get('product-form')) {
         delete config.headers['Content-Type'];
 
         const formData = new FormData(this.form);
-        if (this.cart) {
-          formData.append(
-            'sections',
-            this.cart.getSectionsToRender().map((section) => section.id)
-          );
-          formData.append('sections_url', window.location.pathname);
-          this.cart.setActiveElement(document.activeElement);
-        }
-        config.body = formData;
+        // if (this.cart) {
+        //   formData.append(
+        //     'sections',
+        //     this.cart.getSectionsToRender().map((section) => section.id)
+        //   );
+        //   formData.append('sections_url', window.location.pathname);
+        //   this.cart.setActiveElement(document.activeElement);
+        // }
+        // config.body = formData;
 
-        fetch(`${routes.cart_add_url}`, config)
+        // fetch(`${routes.cart_add_url}`, config)
+
+        let mainProductVaraintId = this.form.querySelector('.product-variant-id').value;
+        let mainProductQuantity =
+          this.closest('product-info').querySelector('.quantity__input').value;
+        let addOns = [];
+        let mainProduct = {
+          id: mainProductVaraintId,
+          quantity: mainProductQuantity,
+        };
+
+        this.closest('product-info')
+          .querySelectorAll('.main-product__addon:checked')
+          .forEach((input) => {
+            addOns.push({
+              id: input.value,
+              quantity: 1,
+              properties: {
+                _associated: mainProductVaraintId,
+                _isBundle: true,
+                _isAddOn: true,
+              },
+            });
+          });
+
+        if (addOns.length > 0) {
+          Object.assign(mainProduct, {
+            properties: {
+              _associated: mainProductVaraintId,
+              _isBundle: addOns.length !== 0,
+            },
+          });
+        }
+
+        let modifiedFormData = {
+          items: [mainProduct, ...addOns],
+        };
+
+        if (this.cart) {
+          Object.assign(modifiedFormData, {
+            sections: this.cart.getSectionsToRender().map((section) => section.id),
+            sections_url: window.location.pathname,
+          });
+        }
+
+        fetch(window.Shopify.routes.root + 'cart/add.js', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(modifiedFormData),
+        })
           .then((response) => response.json())
           .then((response) => {
             if (response.status) {
@@ -81,7 +134,7 @@ if (!customElements.get('product-form')) {
                     this.cart.renderContents(response);
                   });
                 },
-                { once: true }
+                { once: true },
               );
               quickAddModal.hide(true);
             } else {
@@ -93,9 +146,12 @@ if (!customElements.get('product-form')) {
           })
           .finally(() => {
             this.submitButton.classList.remove('loading');
-            if (this.cart && this.cart.classList.contains('is-empty')) this.cart.classList.remove('is-empty');
+            if (this.cart && this.cart.classList.contains('is-empty'))
+              this.cart.classList.remove('is-empty');
             if (!this.error) this.submitButton.removeAttribute('aria-disabled');
             this.querySelector('.loading__spinner').classList.add('hidden');
+
+            window.location = '/cart';
           });
       }
 
@@ -105,7 +161,9 @@ if (!customElements.get('product-form')) {
         this.errorMessageWrapper =
           this.errorMessageWrapper || this.querySelector('.product-form__error-message-wrapper');
         if (!this.errorMessageWrapper) return;
-        this.errorMessage = this.errorMessage || this.errorMessageWrapper.querySelector('.product-form__error-message');
+        this.errorMessage =
+          this.errorMessage ||
+          this.errorMessageWrapper.querySelector('.product-form__error-message');
 
         this.errorMessageWrapper.toggleAttribute('hidden', !errorMessage);
 
@@ -113,6 +171,6 @@ if (!customElements.get('product-form')) {
           this.errorMessage.textContent = errorMessage;
         }
       }
-    }
+    },
   );
 }

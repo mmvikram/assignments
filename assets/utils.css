@@ -29,6 +29,9 @@
   height: 100%;
 }
 
+.h-auto {
+  height: auto;
+}
 .mr-auto {
   margin-right: auto;
 }

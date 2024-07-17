@@ -79,6 +79,25 @@
     },
     "hero_section_f6AayD": {
       "type": "hero-section",
+      "blocks": {
+        "link_block_PCMAXk": {
+          "type": "link-block",
+          "settings": {
+            "block_ref": "block-1"
+          }
+        },
+        "link_name_iQ4gt9": {
+          "type": "link-name",
+          "settings": {
+            "link_name": "Link name",
+            "ref": ""
+          }
+        }
+      },
+      "block_order": [
+        "link_block_PCMAXk",
+        "link_name_iQ4gt9"
+      ],
       "settings": {
         "heading": "Navigate to Assignments",
         "animation_reveal": "0.03",
