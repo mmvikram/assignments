@@ -59,7 +59,7 @@ if (!customElements.get('product-form')) {
           .forEach((input) => {
             addOns.push({
               id: input.value,
-              quantity: 1,
+              quantity: mainProductQuantity,
               properties: {
                 _associated: mainProductVaraintId,
                 _isBundle: true,

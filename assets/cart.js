@@ -193,7 +193,11 @@ class CartItems extends HTMLElement {
 
     const body = JSON.stringify({
       updates: ids.reduce((acc, { variant_id, properties: { _isAddOn } }) => {
-        return { ...acc, [variant_id]: quantity != 0 ? (_isAddOn ? 1 : quantity) : 0 };
+        return {
+          ...acc,
+          // [variant_id]: quantity != 0 ? (_isAddOn ? 1 : quantity) : 0
+          [variant_id]: quantity,
+        };
       }, {}),
       sections: this.getSectionsToRender().map((section) => section.section),
       sections_url: window.location.pathname,
